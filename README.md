@@ -10,7 +10,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In order to run the web application, perform following steps:
 
 `git clone https://github.com/ishaank15/foodApp.git`
+
 `npm install`
+
 `npm run start`
 
 Runs the app in the development mode.<br>
