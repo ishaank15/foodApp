@@ -1,12 +1,25 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import store from './shared/storeConfig/configureStore';
+import Routes from './shared/routes.js';
+import serviceWorker from './serviceWorker';
+import './assets/app.css';
+import './assets/cards.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+window._app_container = document.getElementById('root');
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <div className="fluidContainer">
+                <Routes />
+            </div>
+        </BrowserRouter>
+    </Provider>,
+    window._app_container
+);
+serviceWorker();

@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Dashboard from './modules/Dashboard';
+import OrderHistory from './modules/OrderHistory'
+import {Tabs, Tab} from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="jumbotron">
+          <h1>Order & Out</h1>
+          <p>A web application that allows users to order food.</p>
+        </div>
+        <Tabs defaultActiveKey="Dashboard" id="uncontrolled-tab-example">
+          <Tab eventKey="Dashboard" title="Dashboard">
+            <Dashboard />
+          </Tab>
+          <Tab eventKey="Order History" title="Order History">
+            <OrderHistory />
+          </Tab>
+        </Tabs>
+        {/* <Dashboard /> */}
+      </div>
+    );
+  }
 }
 
 export default App;
