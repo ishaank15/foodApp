@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="jumbotron">
-          <h1>Order & Out</h1>
-          <p>A web application that allows users to order food.</p>
+          <h1> inFoodö Ördering App</h1>
+          <p>Order your food from the menu.</p>
         </div>
         <Tabs defaultActiveKey="Dashboard" id="uncontrolled-tab-example">
           <Tab eventKey="Dashboard" title="Dashboard">
