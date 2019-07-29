@@ -29,7 +29,7 @@ class OrderHistoryCard extends Component {
             return this.itemTuple(index, item.name, discountPrice)
         });
         actualTotal = total;
-        total = 0.9 * total;
+        total = (0.9 * total).toFixed(2);
         return (
             <Fragment>
                 {selectedItems && (
