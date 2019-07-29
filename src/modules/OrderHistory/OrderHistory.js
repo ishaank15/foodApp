@@ -69,7 +69,7 @@ class OrderHistory extends Component {
     render() {
         const { orderList = [], cancelled } = this.props;
         if (!isArrayWithElements(orderList))
-            return <div>{`You haven't ordered any food item yet.`}</div>
+            return <div>{`You haven't ordered any food item yet`}</div>
         return orderList.map((order, index) => {
             return <OrderHistoryCard key={index} selectedItems={order} cancelled={cancelled} />
         })

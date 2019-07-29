@@ -20,3 +20,15 @@ export const isArrayWithElements = (data) => {
       return false;
     }
 }
+
+export const getTotalWithDiscount = (selectedItems) => {
+    let total = 0;
+    let discountPrice = 0;
+    selectedItems && selectedItems.length && selectedItems.forEach((item, index) => {
+        discountPrice = calculateDiscount(item.price, item.discount);
+        total = total + discountPrice;
+    });
+    const discountPercent = 10;
+    total = (1 -discountPercent/100) * total;
+    return total.toFixed(2)
+}

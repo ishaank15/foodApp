@@ -150,6 +150,13 @@ button {
     width:50%;
 }
 
+.bottomBar{
+    display: none;
+}
+
+.cart-box{
+    display: block;
+}
 @media all and (max-width:480px){
     .summary-container,.menu-container,.OrderTab .cart-container{
         width: 100%;
@@ -161,4 +168,44 @@ button {
     .filter-container .other-filter{
         width: 33.33%;
     }
+    .bottomBar {
+        bottom: 0;
+        position: fixed ;
+        width: 100%;
+        left: 0;
+        padding: 15px;
+        display: flex;
+        flex: 1;
+        background: #ffd400;
+        text-align: center;
+        align-items: center;
+        font-weight: bold;
+        color: black;
+    }
+    .bottomBar .view-cart-button {
+        flex: 50% 1;
+        font-size: 14px;
+        font-weight: bold;
+        align-items: center;
+        padding: 11px 1px 12px 4px;
+        margin: 0 0 0 6px;
+        border: solid 1px #000000;
+        border-radius: 14px;
+    }
+    .pic {
+        margin: -2px 0 0 8px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 0;
+      }
+      
+      .arrow-right {
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 8px solid #080808;
+      }
+      .cart-box{
+          display: none;
+      }
 }

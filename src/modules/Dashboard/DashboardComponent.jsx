@@ -14,7 +14,7 @@ class Dashboard extends Component {
                 <div className="col col-md-9 col-xs-8 menu-container">
                     <MenuItemList />
                 </div>
-                <div className="col col-md-3 col-xs-4 summary-container">
+                <div className="col col-md-3 col-xs-4 summary-container cart-box">
                     <Cart />
                 </div>
             </div>
