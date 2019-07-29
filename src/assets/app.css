@@ -19,13 +19,19 @@ button {
 }
 
 .jumbotron {
-  background: #ffd400;
+  background:#2874f0;
   margin-bottom: 0px;
+  text-align: center;
+  color: #f4f4f4
 }
 
-.jumbotron .h1 {
+.jumbotron h1 {
     font-weight: bold;
-    font-size: 64px;
+    font-size: 25px;
+
+}
+.jumbotron p {
+    font-size: 15px;
 }
 
 .category {
@@ -40,8 +46,25 @@ button {
     background: white;
     border: 2px solid white;
     border-radius: 4px;
+    padding: 10px;
+    font-size: 12px;
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    border: 1px solid #e4e4e4;
+}
+.cart-container table tbody tr td{
+    padding: 5px;
+}
+
+.OrderTab .cart-container{
+    background: white;
+    border: 2px solid white;
+    border-radius: 4px;
     padding: 5px;
     font-size: 12px;
+    width: 30%;
+    margin: 20px 20px 0 0;
+    vertical-align: top;
+    display: inline-block;
 }
 
 .summary-container {
@@ -54,15 +77,19 @@ button {
 }
 
 .cart-total {
-    font-size: 32px;
+    font-size: 19px;
     font-weight: bold;
     color: black;
+    text-align: right;
+    margin-top: 10px;
 }
 
 .card-discount {
     font-size: 12px;
     font-weight: bold;
     color: green;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card-discount .card-actual {
@@ -75,6 +102,7 @@ button {
 
 .ingredients {
     color: gray;
+    word-break: break-all;
 }
 
 .btn-remove {
@@ -114,4 +142,23 @@ button {
 
 .discounted-price {
     color: green;
+}
+
+.nav-tabs > li{
+    float: none;
+    display:inline-block;
+    width:50%;
+}
+
+@media all and (max-width:480px){
+    .summary-container,.menu-container,.OrderTab .cart-container{
+        width: 100%;
+    }
+    .input-search-box{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .filter-container .other-filter{
+        width: 33.33%;
+    }
 }

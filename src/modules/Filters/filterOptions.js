@@ -3,11 +3,11 @@ import React from 'react';
 const FilterOptions = (props) => {
   return (
     <div className="row">
-      <div className="col col-xs-3 col-md-3">
+      <div className="col col-xs-3 col-md-3 input-search-box">
         <label htmlFor="namefilter" className="pull-left">Name:</label>
         <input name="namefilter" type="text" autoFocus placeholder="Search" className="inputBox" value={props.filterNameText ? props.filterNameText : ''} onChange={e => props.handleFilteration(e, 'name')} />
       </div>
-      <div className="col col-xs-3 col-md-3">
+      <div className="col col-xs-3 col-md-3 other-filter">
         <label htmlFor="categoryfilter" className="pull-left">Category:</label>
         <select name="categoryfilter" className="inputBox" value={props.filterCategoryText ? props.filterCategoryText : ''} onChange={e => props.handleFilteration(e, 'category')}>
           <option value="">{'All'}</option>
@@ -17,7 +17,7 @@ const FilterOptions = (props) => {
           <option value="Drinks">{'Drinks'}</option>
         </select>
       </div>
-      <div className="col col-xs-3 col-md-3">
+      <div className="col col-xs-3 col-md-3 other-filter">
         <label htmlFor="ratingfilter" className="pull-left">Rating:</label>
         <select name="ratingfilter" className="inputBox" value={props.filterRatingText ? props.filterRatingText : ''} onChange={e => props.handleFilteration(e, 'rating')}>
           <option value="">{'All'}</option>
@@ -28,7 +28,7 @@ const FilterOptions = (props) => {
           <option value="5">{'★★★★★'}</option>
         </select>
       </div>
-      <div className="col col-xs-3 col-md-3">
+      <div className="col col-xs-3 col-md-3 other-filter">
         <label htmlFor="pricefilter" className="pull-left">Price:</label>
         <select name="pricefilter" className="inputBox" value={props.filterPriceText ? props.filterPriceText : ''} onChange={e => props.handleFilteration(e, 'price')}>
           <option value="">{'All'}</option>

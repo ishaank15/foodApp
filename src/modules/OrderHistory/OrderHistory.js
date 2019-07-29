@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import { calculateDiscount, isArrayWithElements } from '../../common/utils'
 import { Tabs, Tab } from 'react-bootstrap';
 
@@ -31,7 +31,7 @@ class OrderHistoryCard extends Component {
         actualTotal = total;
         total = 0.9 * total;
         return (
-            <div>
+            <Fragment>
                 {selectedItems && (
                     <div className="cart-container">
                         <div className="card-title">{'ORDER SUMMARY'} </div>
@@ -40,9 +40,18 @@ class OrderHistoryCard extends Component {
                             <tbody>{cartItemList}</tbody>
                         </table>
                         <br />
-                        <div className='card-discount'>{'Actual Price(Total): ₹ ' + actualTotal} </div>
-                        <div className='card-discount'>{'InFeedo Special Discount: 10%'}   </div>
-                        <div className='card-discount'>{'After Discount Price(Total): ₹ ' + total} </div>
+                        <div className='card-discount'>
+                            <span className='text'>{'Actual Price(Total)'}</span>
+                            <span className='value'>{': ₹' + actualTotal}</span>
+                        </div>
+                        <div className='card-discount'>
+                            <span className='text'>{'InFeedo Special Discount'}</span>
+                            <span className='value'>{': 10%'}</span>
+                        </div>
+                        <div className='card-discount'>
+                            <span className='text'>{'After Discount Price(Total)'}</span>
+                            <span className='value'>{': ₹' + total}</span>
+                        </div>
                         <div className="cart-total">
                             {'Total: ₹' + total}
                         </div>
@@ -50,7 +59,8 @@ class OrderHistoryCard extends Component {
                         {!cancelled && <button>ORDER SUCCESSFULL</button>}
                     </div>
                 )}
-            </div>
+            </Fragment>
+
         );
     }
 }
@@ -70,11 +80,11 @@ class OrderHistory extends Component {
 const OrderHistoryTab = (props) => {
     const { cancelledOrders, successfulOrders } = props;
     return (
-        <Tabs defaultActiveKey="Successful Orders" id="uncontrolled-tab-example">
-            <Tab eventKey="Successful Orders" title="Successful Orders">
+        <Tabs defaultActiveKey="Successful Orders" id="uncontrolled-tab-example" className="OrderTab">
+            <Tab eventKey="Successful Orders" title="Successful Orders" className="successfulTab">
                 <OrderHistory orderList={successfulOrders} cancelled={false} />
             </Tab>
-            <Tab eventKey="Cancelled Orders" title="Cancelled Orders">
+            <Tab eventKey="Cancelled Orders" title="Cancelled Orders" className="cancelledTab">
                 <OrderHistory orderList={cancelledOrders} cancelled={true} />
             </Tab>
         </Tabs>

@@ -68,9 +68,18 @@ class Cart extends Component {
                             <tbody>{cartItemList}</tbody>
                         </table>
                         <br />
-                        <div className='card-discount'>{'Actual Price(Total): ₹ ' + actualTotal} </div>
-                        <div className='card-discount'>{'InFeedo Special Discount: 10%'}   </div>
-                        <div className='card-discount'>{'After Discount Price(Total): ₹ ' + total} </div>
+                        <div className='card-discount'>
+                            <span className='text'>{'Actual Price(Total)'}</span>
+                            <span className='value'>{': ₹' + actualTotal}</span>
+                        </div>
+                        <div className='card-discount'>
+                            <span className='text'>{'InFeedo Special Discount'}</span>
+                            <span className='value'>{': 10%'}</span>
+                        </div>
+                        <div className='card-discount'>
+                            <span className='text'>{'After Discount Price(Total)'}</span>
+                            <span className='value'>{': ₹ ' + total}</span>
+                        </div>
                         <div className="cart-total">
                             {'Total: ₹' + total}
                         </div>

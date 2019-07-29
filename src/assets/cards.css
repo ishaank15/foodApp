@@ -11,13 +11,16 @@
 .card{
 	padding: 1rem!important;
 	border: none;
-	margin-bottom:1rem;
+	margin-bottom:0;
 	-webkit-transition: .5s all ease;
 	-moz-transition: .5s all ease;
 	transition: .5s all ease;
 }
 .card .card-block{
     position: relative;
+}
+.card .card-block hr{
+    margin:5px 0;
 }
 .card .card-block a{
 	color: #007b5e !important;
@@ -51,6 +54,6 @@
 }
 
 .card-title {
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: bold;
 }
