@@ -5,7 +5,7 @@ import OrderModal from './OrderModal';
 const BottomBar = (props) => {
     const { selectedItems = [], checkoutCurrentOrder, toggleSuccessModal} = props;
     const [openCartModal, toggleCartModal ] = useState(false)
-    let textValue = ' ORDER FOOD ONLINE AND GET AMAZING DISCOUNTS '
+    let textValue = ' ORDER FOOD ONLINE AND GET DISCOUNTS '
     const checkoutCart = () => {
         toggleSuccessModal(true);
         checkoutCurrentOrder(selectedItems);

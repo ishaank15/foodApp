@@ -193,6 +193,12 @@ button {
         width:2px;
         top:0;
     }
+    .bottomBar.welcome{
+        justify-content: center;
+    }
+    .bottomBar.welcome::after{
+        content: none;
+    }
     .bottomBar .view-cart-button {
         font-size: 14px;
         font-weight: bold;
