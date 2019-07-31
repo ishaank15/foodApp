@@ -1,9 +1,12 @@
 import {Modal} from 'react-bootstrap';
 import React from 'react';
 import Cart from '../Cart'
+import * as commomAction from '../../common/actions'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 const CartModal = (props) => {
-    const {showModal, toggleModal} = props;
+    const {showModal, toggleModal, showSuccessModal, toggleSuccessModal} = props;
     if(!showModal) return null
     return (
       <>
@@ -19,10 +22,17 @@ const CartModal = (props) => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Cart/>
+            <Cart showSuccessModal={showSuccessModal} toggleSuccessModal={toggleSuccessModal} />
           </Modal.Body>
         </Modal>
       </>
     );
 }
-export default CartModal;
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleSuccessModal: bindActionCreators(commomAction.toggleSuccessModal, dispatch)
+})
+
+export default connect(null, mapDispatchToProps)(CartModal);
+
+

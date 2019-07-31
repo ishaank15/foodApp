@@ -10,11 +10,14 @@ class Cart extends Component {
     }
 
     checkout = () => {
-        const { selectedItems = [] } = this.props;
+        const { selectedItems = [], toggleSuccessModal } = this.props;
         this.setState({
             checkoutAlert: true
         });
         this.props.checkoutCurrentOrder(selectedItems);
+        if(typeof toggleSuccessModal === 'function'){
+            toggleSuccessModal(true)
+        }
     }
 
     removeItemFromCart = (idx) => {
